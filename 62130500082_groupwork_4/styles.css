@@ -1,0 +1,40 @@
+.imgshow {
+    width: 450px;
+    height: 314px;
+    overflow: hidden;
+    text-align: center;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.imgshow:hover {
+    opacity: 1
+}
+
+.imgshow img {
+    width: 450px;
+    height: 300px;
+}
+
+#image-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    opacity: 1;
+    transition: 1s;
+    background-color: black;
+}
+
+#imgshowForzoom {
+    margin-left: 10%;
+    padding: 5%;
+    width: 650px;
+    height: 400px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+}
