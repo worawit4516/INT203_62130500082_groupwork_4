@@ -46,8 +46,8 @@
         <h1 class="text-xl text-6xl text-white  pt-4 font-medium pl-80 ">Photo Gallery Likes({{countLikes}}) picture({{countpicture}})</h1>
         <div class="flex-row flex" id="image-box" v-if="Box_image">
 
-            <div v-for="(picture, index) in searchZoom" class="ml-96">
-                <img :src="picture.src " id="imgshowForzoom">
+            <div class="ml-96">
+                <img :src="currentpicture.src" id="imgshowForzoom">
             </div>
         </div>
         <button> <span @click="closeZoom" class="material-icons ml-20 bg-white close-icon" v-if="Box_image == true">
@@ -55,11 +55,11 @@
             </span></button>
         <div class="flex-row flex pb-32 ">
 
-            <ul v-for="(picture,index) in searchPhoto" v-if="searchPhoto.length !==0 ">
+            <ul v-for="(picture,index) in searchPhoto" v-if="searchPhoto.length !==0 " :key="picture.id">
 
                 <li class="" v-on:click="toggleDone(index)">
                     <div class="imgshow p-2 bg-black ml-12 cursor-pointer ">
-                        <button @click="zoom(index)"> <img class="" v-bind:src="picture.src"></button>
+                        <button @click="zoom(picture.id)"> <img class="" v-bind:src="picture.src"></button>
                     </div>
 
                     <div class="ml-40 text-white mt-14 cursor-pointer ">
