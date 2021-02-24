@@ -4,19 +4,23 @@ const app = {
             show: { icon: true, searchbar: false },
             inputTitle: '',
             Box_image: false,
+            currentpicture: '',
             pictures: [{
+                    id: 1,
                     src: "./image/1.jpg",
                     text: "Death Standing",
                     like: false,
                     zoom: false
                 },
                 {
+                    id: 2,
                     src: "./image/2.jpg",
                     text: "Blair Witch",
                     like: false,
                     zoom: false
                 },
                 {
+                    id: 3,
                     src: "./image/3.jpg",
                     text: "Cyberpunk",
                     like: false,
@@ -33,18 +37,20 @@ const app = {
             this.inputTitle = ''
 
         },
-        zoom(index) {
+        zoom(id) {
 
-            for (let i = 0; i < this.pictures.length; i++) {
-                if (i == index) {
-                    this.pictures[i].zoom = true;
-                    console.log(index);
-                } else {
-                    this.pictures[i].zoom = false;
-                    console.log(i);
-                }
+            // for (let i = 0; i < this.pictures.length; i++) {
+            //     if (i == index) {
+            //         this.pictures[i].zoom = true;
+            //         console.log(index);
+            //     } else {
+            //         this.pictures[i].zoom = false;
+            //         console.log(i);
+            //     }
 
-            }
+            // }
+
+            this.currentpicture = this.pictures.filter(p => p.id == id)[0]
             this.Box_image = true
         },
         closeZoom() {
